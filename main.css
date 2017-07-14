@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+}
+
+@keyframes textFadeIn {
+    0%{position: absolute; opacity: 0;}
+    100%{position: absolute; opacity: 1;}
+}
+
+.text{
+    display: block;
+    position: absolute;
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+    margin-top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f9f193;
+    font-weight: bold;
+    z-index: 1;
+    opacity: 0;
+    animation: textFadeIn .5s ease-in 2.25s forwards;
+}
+
+
+@keyframes bkground {
+	0% { background-position: 0 0; }
+	100% { background-position: 1280px 0; }
+}
+
+.back-ground{
+    background: url('./fenceBkgrnd.png') repeat;
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+            left:0px;
+            top:0px;
+            animation: bkground 3.3s linear 2.25s infinite;
+}
+
+@keyframes frground {
+    0% { background-position: 0 0; }
+	100% { background-position: 1280px 0; }
+}
+
+
+.fore-ground{
+    background: url("./fenceFrgrnd.png") repeat;
+    position: fixed;
+    width: 100vw;
+    height: 147px;
+            left:0px;
+            bottom:0px;
+            z-index: 2;
+            animation: frground 2.5s linear 2.25s infinite;
+}
+
+@keyframes flap-cycle {
+    0% {background-position: 0px 0px;}
+    100% {background-position: -0px -279px;}
+}
+
+.bat-sprite {
+  background: url('bat/bats.png') no-repeat;
+  background-size: 100%;
+  height: 46px;
+  width: 88px;
+  left:-100px;
+  top:300px;
+  z-index: 1;
+  position: absolute;
+  animation: flap-cycle .75s steps(6) infinite;
+}
+
+@keyframes bat-move {
+    0%{transform: translate(0px, 0px);}
+    17%{transform: translate(50px, -25px);}
+    32%{transform: translate(100px, 25px);}
+    49%{transform: translate(150px, -50px);}
+    66%{transform: translate(200px, 50px);}
+    83%{transform: translate(250px, -75px);}
+    100%{transform: translate(300px, 75px);}
+}
+
+.bat-wrapper{
+    animation: bat-move 2.25s linear .2s forwards;
+}
+
+
+
+@keyframes walk-cycle {
+    0% {background-position: 0 0;}
+    100% {background-position: 0 -2390px;}
+}
+
+@keyframes walk-to-run {
+  0% {background-position: -400px 0px;}
+  100% {background-position: -400px -2390px;}
+}
+
+@keyframes  run-cycle {
+  0% {background-position: -800px 0;}
+  100% {background-position: -800px -2590px;}
+}
+
+
+.cat-sprite {
+  background: url('./cat_sprite.png') 0 0 no-repeat;
+  height: 200px;
+  width: 400px;
+  left:1200px;
+  top:400px;
+  z-index: 1;
+  position: absolute;
+  animation:
+   walk-cycle 1s steps(12) 1,
+   walk-to-run 1.25s steps(12) 1s 1,
+   run-cycle .5s steps(13) 2.25s infinite;
+}
+
+@keyframes cat-move {
+    0%{transform: translateX(0px);}
+    36%{transform: translateX(-300px);}
+    82%{transform: translateX(-500px);}
+    100%{transform: translateX(-800px);}
+}
+
+.cat-wrapper{
+    animation: cat-move 2.75s linear forwards;
+}
