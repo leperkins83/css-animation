@@ -9,7 +9,7 @@ body{
 
 .text{
     display: block;
-    position: absolute;
+    position: fixed;
     font-family: 'Rock Salt', cursive;
     text-align: center;
     margin-top: 75px;
@@ -34,7 +34,7 @@ body{
     width: 100vw;
     height: 100vh;
             left:0px;
-            top:0px;
+            bottom:0px;
             animation: bkground 3.3s linear 2.25s infinite;
 }
 
@@ -48,7 +48,7 @@ body{
     background: url("./fenceFrgrnd.png") repeat;
     position: fixed;
     width: 100vw;
-    height: 147px;
+    height: 20vh;
             left:0px;
             bottom:0px;
             z-index: 2;
@@ -66,9 +66,9 @@ body{
   height: 46px;
   width: 88px;
   left:-100px;
-  top:300px;
+  bottom:-350px;
   z-index: 1;
-  position: absolute;
+  position: fixed;
   animation: flap-cycle .75s steps(6) infinite;
 }
 
@@ -109,9 +109,9 @@ body{
   height: 200px;
   width: 400px;
   left:1200px;
-  top:400px;
+  bottom:-600px;
   z-index: 1;
-  position: absolute;
+  position: fixed;
   animation:
    walk-cycle 1s steps(12) 1,
    walk-to-run 1.25s steps(12) 1s 1,
